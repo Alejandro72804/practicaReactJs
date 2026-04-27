@@ -8,15 +8,22 @@ import { CreateTodoButton } from "./ToDo/Utils/CreateTodoButton";
 
 const defaultTodos = [
   { text: "Primera funcion de React", completed: true },
-  { text: "Segunda funcion de React", completed: true },
+  { text: "Segunda funcion de React", completed: false },
   { text: "Tercera funcion de React", completed: false },
 ];
 
 function App() {
+  const [todos, setTodos] = React.useState(defaultTodos);
+  const [serchValue, setSearchValue] = React.useState("");
+
+  const completedTodos = todos.filter((todo) => !!todo.completed).length;
+  const totalTodos = todos.length;
+
   return (
     <div className="app-container">
-      <TodoCounter completed={2} total={2} />
-      <TodoSearch />
+      <TodoCounter completed={completedTodos} total={totalTodos} />
+
+      <TodoSearch searchValue={serchValue} setSearchValue={setSearchValue} />
 
       <TodoList>
         {defaultTodos.map((todo) => (
