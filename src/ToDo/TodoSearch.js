@@ -1,6 +1,16 @@
+import React from "react";
 function TodoSearch() {
+  const [serchValue, setSearchValue] = React.useState("");
+
   return (
-    <input placeholder="Buscar tarea..." />
+    <input
+      className="TodoSearch"
+      placeholder="Buscar tarea..."
+      value={serchValue}
+      onChange={(event) => {
+        setSearchValue(event.target.value);
+      }}
+    />
   );
 }
 
