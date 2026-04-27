@@ -1,8 +1,8 @@
-function TodoItem({ txt }) {
+function TodoItem(props) {
   return (
     <li>
       <span>V</span>
-      <p>{txt}</p>
+      <p>{props.text}</p>
       <span>X</span>
     </li>
   );
