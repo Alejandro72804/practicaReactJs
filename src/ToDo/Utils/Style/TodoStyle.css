@@ -1,4 +1,3 @@
-/* 🎨 Variables de color (paleta pastel) */
 :root {
   --bg: #fdf6f9;
   --primary: #ffd6e0;
@@ -8,7 +7,6 @@
   --soft-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* 🌸 Reset básico */
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
@@ -16,7 +14,6 @@ body {
   color: var(--text);
 }
 
-/* 🧁 Contenedor general */
 #root {
   display: flex;
   justify-content: center;
@@ -24,19 +21,6 @@ body {
   padding: 40px;
 }
 
-/* 📝 Título */
-h1 {
-  font-size: 26px;
-  text-align: center;
-  margin-bottom: 20px;
-  background: var(--primary);
-  padding: 16px;
-  border-radius: 16px;
-  box-shadow: var(--soft-shadow);
-  animation: fadeIn 0.6s ease;
-}
-
-/* 🔍 Input */
 input {
   width: 100%;
   padding: 12px 16px;
@@ -54,14 +38,12 @@ input:focus {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
-/* 📋 Lista */
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* 📌 Item */
 li {
   display: flex;
   justify-content: space-between;
@@ -79,14 +61,12 @@ li:hover {
   transform: translateY(-3px);
 }
 
-/* ✔ Texto */
 li p {
   margin: 0;
   flex: 1;
   text-align: center;
 }
 
-/* ✔ Botones (check / delete) */
 li span {
   cursor: pointer;
   font-weight: bold;
@@ -95,25 +75,14 @@ li span {
   transition: all 0.2s ease;
 }
 
-/* ✔ Check */
-li span:first-child {
-  background: var(--accent);
-}
-
 li span:first-child:hover {
   transform: scale(1.2);
-}
-
-/* ❌ Delete */
-li span:last-child {
-  background: var(--primary);
 }
 
 li span:last-child:hover {
   transform: scale(1.2);
 }
 
-/* ➕ Botón crear */
 button {
   width: 100%;
   margin-top: 20px;
@@ -131,7 +100,6 @@ button:hover {
   transform: scale(1.03);
 }
 
-/* ✨ Animaciones */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -170,4 +138,80 @@ button:hover {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+.check,
+.delete {
+  background: #eee;
+  color: #999;
+}
+
+.check--active {
+  background: #caffbf;
+  color: #2d6a4f;
+}
+
+.status {
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 18px;
+  transition: all 0.2s ease;
+}
+
+.status.happy {
+  background: #caffbf;
+}
+
+.status.sad {
+  background: #ffd6e0;
+}
+
+.status {
+  font-size: 18px;
+  margin: 0 8px;
+  transition: transform 0.2s ease;
+}
+
+.status:hover {
+  transform: scale(1.2);
+}
+
+.delete {
+  background: #ffd6e0;
+  color: #9d0208;
+}
+
+.delete:hover {
+  transform: scale(1.2);
+}
+
+.counter {
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: var(--soft-shadow);
+  animation: fadeIn 0.6s ease;
+  transition: all 0.3s ease;
+}
+
+.counter--empty {
+  background: #f1f1f1;
+  color: #777;
+}
+
+.counter--start {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.counter--progress {
+  background: var(--secondary);
+  color: #055160;
+}
+
+.counter--success {
+  background: var(--accent);
+  color: #2d6a4f;
 }

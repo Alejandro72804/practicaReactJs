@@ -1,9 +1,24 @@
-function TodoItem(props) {
+function TodoItem({ text, completed, onComplete, onDelete }) {
   return (
     <li>
-      <span>V</span>
-      <p className={props.completed ? "completed" : ""}>{props.text}</p>
-      <span>X</span>
+      {/* ✔ Check */}
+      <span
+        onClick={onComplete}
+        className={`check ${completed ? "check--active" : ""}`}
+      >
+        ✔
+      </span>
+
+      {/* Texto */}
+      <p className={completed ? "completed" : ""}>{text}</p>
+
+      {/* 😊 / 😢 estado */}
+      <span className="status">{completed ? "😊" : "😢"}</span>
+
+      {/* ❌ eliminar */}
+      <span onClick={onDelete} className="delete">
+        ❌
+      </span>
     </li>
   );
 }
