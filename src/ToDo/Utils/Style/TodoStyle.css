@@ -17,7 +17,7 @@ body {
 #root {
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   padding: 40px;
 }
 
@@ -214,4 +214,109 @@ button:hover {
 .counter--success {
   background: var(--accent);
   color: #2d6a4f;
+}
+
+/* Estado Carga */
+
+/* Contenedor */
+.loading-container {
+  text-align: center;
+  padding: 10px;
+}
+
+/* Texto */
+.loading-text {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Skeleton */
+.loading-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Cada "fake todo" */
+.skeleton-item {
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #f1f1f1 25%, #e0e0e0 50%, #f1f1f1 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Animación */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Estado Error */
+
+/* Contenedor */
+.error-container {
+  background: #ffe5e5;
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: var(--soft-shadow);
+  animation: fadeIn 0.4s ease;
+}
+
+/* Icono */
+.error-icon {
+  font-size: 24px;
+  margin: 0;
+}
+
+/* Título */
+.error-title {
+  font-weight: bold;
+  color: #9d0208;
+  margin: 6px 0;
+}
+
+/* Texto */
+.error-text {
+  font-size: 14px;
+  color: #6a040f;
+  margin: 0;
+}
+
+/* Estado Vacío */
+
+/* Contenedor */
+.empty-container {
+  background: #f1f1f1;
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: var(--soft-shadow);
+  animation: fadeIn 0.4s ease;
+}
+
+/* Icono */
+.empty-icon {
+  font-size: 28px;
+  margin: 0;
+}
+
+/* Título */
+.empty-title {
+  font-weight: bold;
+  margin: 6px 0;
+  color: #555;
+}
+
+/* Texto */
+.empty-text {
+  font-size: 14px;
+  color: #777;
+  margin: 0;
 }
